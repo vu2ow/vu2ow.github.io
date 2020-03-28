@@ -1,0 +1,56 @@
+﻿<!-- Track Page -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Terracotta Jewels</title>
+    <script type="text/javascript" src="JavaScript1.js"></script>
+    <link rel="stylesheet" type="text/css" href="StyleSheet1.css">
+</head>
+
+<body>
+    <header>
+
+        <hgroup>
+            <h1 onclick="window.location.replace('index.html');" onmouseover="document.body.style.cursor = 'pointer';" onmouseout="document.body.style.cursor = 'auto';">Paddy Jewels</h1>
+            <h2>hand-crafted terracotta jewellery</h2>
+        </hgroup>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Orders.html">Orders</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="AboutPage.html">About</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <section>
+        <h1>Track the status of your order</h1>
+        <h3>Type in the code (you'll have recieved one in Email after payment)</h3>
+        <input type="text" id="TrackTB" />
+        <input type="submit" id="TrackButt" value="Track Order" onclick="TrackOrder();" />
+        <img id="TrackImage" />
+        <h4 id="TrackText"></h4>
+    </section>
+
+    <footer>
+        <small>Copyright © 2017 Hari R</small>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Orders.html">Orders</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                <li><a href="AboutPage.html">About</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+</body>
+
+</html>
