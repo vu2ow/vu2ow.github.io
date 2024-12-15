@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Python to set BCM mode</title>
+</head>
+
+<body>
+
+<p>Python to set BCM mode </p>
+<p>&nbsp;</p>
+<div id="p1417888" class="post has-profile bg1" style="border: none; box-sizing: border-box; margin: 0px 0px 20px; padding: 0px; background-repeat: no-repeat; background-position: 100% 0px; position: relative; background-color: rgb(255, 255, 255);">
+	<div class="inner" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px;">
+		<div class="postbody" style="border: none; box-sizing: border-box; margin-top: 0px; margin-right: 225px; margin-bottom: 0px !important; margin-left: 0px; padding: 20px; line-height: 1.5em; float: none; position: relative; background-color: rgb(255, 255, 255); box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 1px; color: rgb(51, 51, 51);">
+			<div id="post_content1417888" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px;">
+				<div class="content" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px; min-height: 100px; overflow: auto hidden; line-height: 1.5em; font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 1.3em; overflow-wrap: break-word; color: rgb(85, 85, 85);">
+					<div class="codebox" style="border: 1px solid rgba(0, 0, 0, 0); box-sizing: border-box; margin-top: 20px; margin-right: 0px; margin-bottom: 0px !important; margin-left: 0px; padding: 10px 20px 20px; font-size: 0.8462em; position: relative; overflow: hidden; border-radius: 3px; background-color: rgba(0, 0, 0, 0.024);">
+						<pre style="border: none; box-sizing: border-box; margin: 0px; padding: 0px;"><code style="border: none; box-sizing: border-box; margin: 0px; padding: 0px; overflow: auto; display: block; height: auto; max-height: 200px; font: 1em / 1.5em Monaco, &quot;Andale Mono&quot;, &quot;Courier New&quot;, Courier, mono; color: rgb(46, 139, 87);">]
+# coding=utf-8
+# using GND and GPIO16 with internal pull up enabled
+
+import RPi.GPIO as GPIO
+import datetime
+
+def my_callback(channel):
+    print('callback at time ' + str(datetime.datetime.now()))
+
+try:
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(16, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+    GPIO.add_event_detect(16, GPIO.RISING, callback=my_callback, bouncetime=400)
+
+    message = raw_input('\nPress any key to exit.\n')
+
+finally:
+    GPIO.cleanup()
+
+print("Goodbye!")
+[/code</code></pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="p1418483" class="post has-profile bg2" style="border: none; box-sizing: border-box; margin: 0px 0px 20px; padding: 0px; background-repeat: no-repeat; background-position: 100% 0px; position: relative; background-color: rgb(240, 240, 240);">
+	<div class="inner" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px;">
+		<dl id="profile1418483" class="postprofile" style="border: none; box-sizing: border-box; margin: 0px; padding: 20px 20px 0px; min-height: 80px; width: 225px; float: right; display: block; font-size: 1.1em; color: rgb(51, 51, 51);">
+			<dt class="no-profile-rank no-avatar" style="border: none; box-sizing: border-box; margin: 0px 0px 10px; padding: 0px; line-height: 1.5em;">
+			</dt>
+			<div class="avatar-container" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(51, 51, 51); font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12.1px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(201, 200, 199); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;">
+			</div>
+			<a class="username" href="https://forums.raspberrypi.com/memberlist.php?mode=viewprofile&amp;u=271325&amp;sid=42828d089ee6c31dbf7a48154096bdbe" style="border: none; box-sizing: border-box; margin: 0px; padding: 0px; color: rgb(197, 26, 74); text-decoration: none; direction: ltr; unicode-bidi: embed; transition: color 0.15s; font-weight: 700; font-family: Roboto, Arial, Helvetica, sans-serif; font-size: 12.1px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; background-color: rgb(201, 200, 199);">
+			<br class="Apple-interchange-newline" />
+			</a>
+		</dl>
+	</div>
+</div>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
